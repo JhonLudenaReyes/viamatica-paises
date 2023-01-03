@@ -1,0 +1,35 @@
+<button type="button" (click)="volverBuscar()" class="btn btn-primary">
+  volver...
+</button>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Region</th>
+      <th>Población</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of paisesFavoritos">
+      <td>{{ pais.numericCode }}</td>
+      <td>{{ pais.name }}</td>
+      <td>{{ pais.region }}</td>
+      <td>{{ pais.population | number }}</td>
+      <td>
+        <button
+          type="button"
+          (click)="eliminarFavorito(pais)"
+          class="btn btn-warning"
+        >
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button type="button" (click)="cerrarSesion()" class="btn btn-success">
+  cerrar sesion...
+</button>

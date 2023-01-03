@@ -1,0 +1,48 @@
+<button
+          type="button"
+          (click)="verFavoritos()"
+          class="btn btn-primary"
+        >
+          ver favoritos...
+        </button>
+<h1>Buscar Pais...</h1>
+
+<div class="container">
+    <form>
+        <br />
+        <div class="mb-3">
+            <label for="user1" class="form-label">Busqueda...</label>
+            <input type="text" class="form-control" name="termino" id="user1" [(ngModel)]="termino" placeholder="Buscar pais...">
+          </div>
+        <button class="btn btn-primary" type="submit" (click)="buscarPais()">busqueda</button>
+    </form>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Region</th>
+      <th>Población</th>
+      <th>Favorito</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of paises">
+      <td>{{ pais.numericCode }}</td>
+      <td>{{ pais.name }}</td>
+      <td>{{ pais.region }}</td>
+      <td>{{ pais.population | number }}</td>
+      <td>
+        <button
+          type="button"
+          (click)="agregarFavorito(pais)"
+          class="btn btn-primary"
+        >
+          Agregar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,17 @@
+<h1>Inicio de sesion</h1>
+<div class="container">
+    <form>
+        <br />
+        <div class="mb-3">
+            <label for="user1" class="form-label">Usuario</label>
+            <input type="text" class="form-control" name="usuario" id="user1" [(ngModel)]="usuario" placeholder="usuario">
+          </div>
+        <br />
+        <div class="mb-3">
+            <label for="pass1" class="form-label">Contrasenia</label>
+            <input type="text" class="form-control" name="contrasenia" id="pass1" [(ngModel)]="contrasenia" placeholder="contrasenia">
+          </div>
+        <br />
+        <button class="btn btn-primary" type="submit" (click)="iniciarSesion()">iniciar sesion</button>
+    </form>
+</div>
